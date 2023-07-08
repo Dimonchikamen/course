@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800");
+
+:root {
+
+  --font-family-main: Rubik, sans-serif;
+
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: var(--font-line-m) / var(--font-line-m) var(--font-family-main);
+
+  --font-lize-l: 32px;
+  --font-size-l: 24px;
+  --font-l: var(--font-line-l) / var(--font-line-l) var(--font-family-main);
+}
