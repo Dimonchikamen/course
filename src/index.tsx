@@ -1,8 +1,8 @@
-import App from "./App";
+import App from "./app/App";
 import {BrowserRouter} from "react-router-dom";
 
 import "./index.scss";
-import ThemeProvider from "./theme/ThemeProvider";
+import ThemeProvider from "./app/providers/ThemeProvider/ui/ThemeProvider";
 import {createRoot} from "react-dom/client";
 
 

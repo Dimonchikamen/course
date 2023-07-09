@@ -1,10 +1,9 @@
 import {FC, Suspense,} from "react";
-import {useTheme} from "./theme/useTheme";
-import {classNames} from "./helpers/classNames/classNames";
+import {useTheme} from "app/providers/ThemeProvider";
+import {classNames} from "shared/lib/classNames/classNames";
 import {Link, Route, Routes } from "react-router-dom";
-import {AboutPageLazy} from "./pages/AboutPage/AboutPage.lazy";
-import {MainPageLazy} from "./pages/MainPage/MainPage.lazy";
-import {Counter} from "./components/Counter";
+import {AboutPage} from "pages/AboutPage";
+import {MainPage} from "pages/MainPage";
 
 
 const App: FC = () => {
@@ -18,11 +17,10 @@ const App: FC = () => {
             <Link to={"/main"}>About</Link>
             <Suspense fallback={<div>Loading</div>}>
                 <Routes>
-                    <Route path={"/about"} element={<AboutPageLazy />}/>
-                    <Route path={"/main"} element={<MainPageLazy />}/>
+                    <Route path={"/about"} element={<AboutPage />}/>
+                    <Route path={"/main"} element={<MainPage />}/>
                 </Routes>
             </Suspense>
-            <Counter/>
         </div>
     )
 }

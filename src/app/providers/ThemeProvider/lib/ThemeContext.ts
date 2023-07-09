@@ -10,6 +10,6 @@ export type ThemeContextProps = {
     setTheme?: React.Dispatch<React.SetStateAction<Theme>>
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({})
+export const ThemeContext = createContext<ThemeContextProps>({});
 
-export const LOCAL_STORGE_THEME_KEY = '@THEME';
+export const LOCAL_STORAGE_THEME_KEY = '@THEME';

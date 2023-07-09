@@ -10,7 +10,17 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
 
-    "baseUrl": ".",
+    "baseUrl": "./src",
+    "paths": {
+      "app/*": ["app/*"],
+      "pages/*": ["pages/*"],
+      "widgets/*": ["widgets/*"],
+      "features/*": ["features/*"],
+      "entities/*": ["entities/*"],
+      "shared/*": ["shared/*"],
+      "helpers/*": ["helpers/*"],
+      "components/*": ["components/*"]
+    }
   },
 
   "ts-node": {
