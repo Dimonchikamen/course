@@ -1,9 +1,10 @@
-import {FC, Suspense, useContext,} from "react";
-import {Counter} from "./components/Counter";
-import {Link, Route, Routes} from "react-router-dom";
+import {FC, Suspense,} from "react";
+import {useTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
+import {Link, Route, Routes } from "react-router-dom";
 import {AboutPageLazy} from "./pages/AboutPage/AboutPage.lazy";
 import {MainPageLazy} from "./pages/MainPage/MainPage.lazy";
-import {useTheme} from "./theme/useTheme";
+import {Counter} from "./components/Counter";
 
 
 const App: FC = () => {
@@ -11,7 +12,7 @@ const App: FC = () => {
 
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames("app", theme)}>
             <button onClick={toggleTheme}>Изменить тему</button>
             <Link to={"/about"}>Главная</Link>
             <Link to={"/main"}>About</Link>
