@@ -1,9 +1,8 @@
-import {FC, Suspense,} from "react";
+import {FC} from "react";
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
-import {Link, Route, Routes } from "react-router-dom";
-import {AboutPage} from "pages/AboutPage";
-import {MainPage} from "pages/MainPage";
+import {Link } from "react-router-dom";
+import {AppRouter} from "app/providers/router";
 
 
 const App: FC = () => {
@@ -13,14 +12,9 @@ const App: FC = () => {
     return (
         <div className={classNames("app", theme)}>
             <button onClick={toggleTheme}>Изменить тему</button>
-            <Link to={"/about"}>Главная</Link>
-            <Link to={"/main"}>About</Link>
-            <Suspense fallback={<div>Loading</div>}>
-                <Routes>
-                    <Route path={"/about"} element={<AboutPage />}/>
-                    <Route path={"/main"} element={<MainPage />}/>
-                </Routes>
-            </Suspense>
+            <Link to={"/"}>Главная</Link>
+            <Link to={"/about"}>About</Link>
+            <AppRouter />
         </div>
     )
 }
