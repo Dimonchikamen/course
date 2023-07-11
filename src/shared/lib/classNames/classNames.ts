@@ -20,6 +20,5 @@ export function classNames(...args: Argument[]): string {
             result.push(arg);
         }
     });
-    console.log(result);
     return result.join(" ");
 }
