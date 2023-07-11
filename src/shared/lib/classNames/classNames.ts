@@ -9,11 +9,17 @@ export function classNames(...args: Argument[]): string {
         }
         if (typeof arg === "object") {
             result.push(...Object.entries(arg)
-                .filter(([cls, value]) => !Boolean(cls) && Boolean(value))
+                .filter(([cls, value]) =>
+                    Boolean(cls) &&
+                    cls !== "undefined" &&
+                    cls !== "null" &&
+                    Boolean(value)
+                )
                 .map(([cls, value]) => cls))
         } else {
             result.push(arg);
         }
     });
+    console.log(result);
     return result.join(" ");
 }
