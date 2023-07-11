@@ -9,7 +9,7 @@ export function classNames(...args: Argument[]): string {
         }
         if (typeof arg === "object") {
             result.push(...Object.entries(arg)
-                .filter(([cls, value]) => Boolean(value))
+                .filter(([cls, value]) => !Boolean(cls) && Boolean(value))
                 .map(([cls, value]) => cls))
         } else {
             result.push(arg);
