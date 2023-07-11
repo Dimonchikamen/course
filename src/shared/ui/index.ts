@@ -1,0 +1,1 @@
+export { LinkMain } from "./LinkMain/LinkMain";

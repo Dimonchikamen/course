@@ -1,8 +1,8 @@
 import {FC} from "react";
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
-import {Link } from "react-router-dom";
 import {AppRouter} from "app/providers/router";
+import {Navbar} from "widgets/Navbar";
 
 
 const App: FC = () => {
@@ -12,8 +12,7 @@ const App: FC = () => {
     return (
         <div className={classNames("app", theme)}>
             <button onClick={toggleTheme}>Изменить тему</button>
-            <Link to={"/"}>Главная</Link>
-            <Link to={"/about"}>About</Link>
+            <Navbar />
             <AppRouter />
         </div>
     )

@@ -1,0 +1,11 @@
+.link {
+  color: var(--main-color);
+
+  &.default {
+    color: var(--main-color);
+  }
+
+  &.secondary {
+    color: var(--inverted-main-color);
+  }
+}
