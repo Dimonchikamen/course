@@ -1,11 +1,13 @@
 import {FC} from "react";
-import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const AboutPage: FC = () => {
+    const { t } = useTranslation("about");
+
     return (
         <div>
             <h1>
-                About Page
+                {t("О сайте")}
             </h1>
         </div>
     )
