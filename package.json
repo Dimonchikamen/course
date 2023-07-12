@@ -10,13 +10,23 @@
     "lint:fix": "eslint \"./src/**/*.{js,jsx,ts,tsx}\" --fix",
     "styelint": "npx stylelint \"**/*.scss\"",
     "styelint:fix": "npx stylelint \"**/*.scss\" --fix",
-    "build:dev": "webpack --env mode=development"
+    "build:dev": "webpack --env mode=development",
+    "test": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "Dmitry Chechikhin",
   "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "\\.js$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-typescript": "^7.22.5",
     "@svgr/webpack": "^8.0.1",
+    "@types/jest": "^29.5.3",
     "@types/node": "^20.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
@@ -31,6 +41,8 @@
     "eslint-plugin-react": "^7.32.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "mini-css-extract-plugin": "^2.7.6",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
