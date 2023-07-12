@@ -15,7 +15,6 @@ const App: FC = () => {
             <Suspense fallback="">
                 <Navbar />
                 <div className={s.content}>
-                    <h2>{"wd"}</h2>
                     <Sidebar />
                     <AppRouter />
                 </div>
