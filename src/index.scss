@@ -4,9 +4,8 @@
 @import "app/styles/themes/dark";
 
 .app {
-  background: var(--bg-color);
-  color: var(--main-color);
-  font: var(--font-m);
-
-  min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--main-color);
+    font: var(--font-m);
+    min-height: 100vh;
 }

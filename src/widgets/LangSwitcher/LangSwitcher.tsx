@@ -4,7 +4,6 @@ import {Button} from "shared/ui";
 import {ButtonVariant} from "shared/ui/Button/Button";
 
 import {classNames} from "shared/lib/classNames/classNames";
-import s from "./LangSwitcher.module.scss";
 
 interface ILangSwitcherProps {
     className?: string;
