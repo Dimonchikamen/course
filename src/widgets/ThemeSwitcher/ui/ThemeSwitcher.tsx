@@ -22,4 +22,4 @@ export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className }) => {
             { theme === Theme.light ? <ThemeLightIcon/> : <ThemeDarkIcon />}
         </Button>
     );
-}
+};

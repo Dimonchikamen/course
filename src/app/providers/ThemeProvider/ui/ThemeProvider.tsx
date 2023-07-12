@@ -8,17 +8,15 @@ interface IThemeProviderProps {
     children: ReactElement|ReactNode;
 }
 
-const ThemeProvider: FC<IThemeProviderProps> = ({ children}) => {
+export const ThemeProvider: FC<IThemeProviderProps> = ({ children}) => {
     const [theme, setTheme] = useState(defaultTheme);
     const defaultProps = useMemo(() => ({
         theme, setTheme
-    }), [theme])
+    }), [theme]);
 
     return (
         <ThemeContext.Provider value={defaultProps}>
             {children}
         </ThemeContext.Provider>
-    )
-}
-
-export default ThemeProvider;
+    );
+};

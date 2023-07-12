@@ -24,4 +24,4 @@ export const Sidebar: FC<ISidebarProps> = ({ className }) => {
             </div>
         </div>
     );
-}
+};

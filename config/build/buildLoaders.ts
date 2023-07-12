@@ -3,7 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {BuildOptions} from "./types/config";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-    const { isDev } = options
+    const { isDev } = options;
 
     const svgLoader = {
         test: /\.svg$/,
@@ -17,7 +17,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
                 loader: "file-loader"
             }
         ]
-    }
+    };
 
     const typeScriptLoader = {
         test: /\.tsx?$/,
@@ -33,7 +33,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
                 loader: "css-loader",
                 options: {
                     modules: {
-                        auto: (resPath: string) => resPath.includes('.module.'),
+                        auto: (resPath: string) => resPath.includes(".module."),
                         localIdentName: isDev
                             ? "[name]_[local]__[hash:base64:5]"
                             : "[hash:base64:8]"

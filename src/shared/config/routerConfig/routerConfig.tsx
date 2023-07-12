@@ -21,4 +21,4 @@ export const routeConfig:  Readonly<Record<AppRoutes, RouteProps>> = {
         path: RoutePath.about,
         element: <AboutPage/>
     }
-}
+};

@@ -10,7 +10,7 @@ const AboutPage: FC = () => {
                 {t("О сайте")}
             </h1>
         </div>
-    )
-}
+    );
+};
 
 export default AboutPage;

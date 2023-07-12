@@ -11,7 +11,7 @@ const AppRouter: FC = () => {
                 ))}
             </Routes>
         </Suspense>
-    )
-}
+    );
+};
 
 export default AppRouter;

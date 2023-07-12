@@ -18,5 +18,5 @@ export const Navbar: FC<INavbarProps> = ({ className }) => {
         <li>
             <LinkMain to={RoutePath.about}>About</LinkMain>
         </li>
-    </ul>
-}
+    </ul>;
+};

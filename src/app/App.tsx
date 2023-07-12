@@ -3,12 +3,12 @@ import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
-import {Sidebar} from "widgets/Sidebar/ui/Sidebar";
+import {Sidebar} from "widgets/Sidebar";
 
 import s from "./App.module.scss";
 
 const App: FC = () => {
-    const { theme } = useTheme()
+    const { theme } = useTheme();
 
     return (
         <div className={classNames("app", theme)}>
@@ -20,7 +20,7 @@ const App: FC = () => {
                 </div>
             </Suspense>
         </div>
-    )
-}
+    );
+};
 
 export default App;

@@ -4,7 +4,7 @@ type Argument = string|Mods;
 export function classNames(...args: Argument[]): string {
     const result: string[] = [];
     args.forEach(arg => {
-        if (!Boolean(arg)) {
+        if (!arg) {
             return;
         }
         if (typeof arg === "object") {
@@ -15,7 +15,7 @@ export function classNames(...args: Argument[]): string {
                     cls !== "null" &&
                     Boolean(value)
                 )
-                .map(([cls, value]) => cls))
+                .map(([cls, value]) => cls));
         } else {
             result.push(arg);
         }

@@ -14,6 +14,11 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: FC<IButtonProps> = ({className, variant = ButtonVariant.text, children, ...rest }) => {
     return (
-        <button className={classNames(className, s[variant])} {...rest} >{children}</button>
+        <button
+            className={classNames(className, s[variant])}
+            {...rest}
+        >
+            {children}
+        </button>
     );
-}
+};

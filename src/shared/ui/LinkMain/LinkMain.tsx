@@ -17,4 +17,4 @@ export const LinkMain: FC<ILinkMainProps> = ({ className, variant = "default", t
             {children}
         </Link>
     );
-}
+};
