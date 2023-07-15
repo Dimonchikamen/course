@@ -1,26 +1,22 @@
-import {FC, useCallback, useState} from "react";
-import {Button} from "shared/ui";
+import {FC } from "react";
+import {useSidebar} from "app/providers/SidebarProvider/lib/useSidebar";
+import Logo from "shared/assets/icons/logo.svg";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import s from "./Sidebar.module.scss";
-import {ThemeSwitcher} from "widgets/ThemeSwitcher";
-import {LangSwitcher} from "widgets/LangSwitcher/LangSwitcher";
 
 interface ISidebarProps {
     className?: string;
 }
 
 export const Sidebar: FC<ISidebarProps> = ({ className }) => {
-    const [isOpen, setOpen] = useState(true);
+    const { isOpen } = useSidebar();
 
-    const toggleHandler = useCallback(() => setOpen(prev => !prev), []);
 
     return (
         <div className={classNames(s.sidebar, className, {[s.open]: isOpen})}>
-            <Button onClick={toggleHandler}>toggle</Button>
-            <div className={s.switchers}>
-                <ThemeSwitcher />
-                <LangSwitcher />
+            <div className={s.logo__container}>
+                <Logo width={900}/>
             </div>
         </div>
     );

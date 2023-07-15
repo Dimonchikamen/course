@@ -2,10 +2,17 @@
     border: 1px solid green;
 }
 
-.content {
+.page_wrap {
     display: flex;
 
-    > *:nth-child(2) {
+    .wrap_content {
+        display: flex;
+        flex-direction: column;
         flex-grow: 1;
+
+        .page_content {
+            flex-grow: 1;
+            padding: 2rem;
+        }
     }
 }

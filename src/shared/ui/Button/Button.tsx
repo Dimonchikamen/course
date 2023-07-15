@@ -5,6 +5,9 @@ import s from "./Button.module.scss";
 
 export enum ButtonVariant {
     text = "text",
+    default = "default",
+    invert = "invert",
+    secondary = "secondary",
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,10 +15,10 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
 }
 
-export const Button: FC<IButtonProps> = ({className, variant = ButtonVariant.text, children, ...rest }) => {
+export const Button: FC<IButtonProps> = ({className, variant = ButtonVariant.default, children, ...rest }) => {
     return (
         <button
-            className={classNames(className, s[variant])}
+            className={classNames(s.button, s[variant], className)}
             {...rest}
         >
             {children}

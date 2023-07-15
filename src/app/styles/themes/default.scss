@@ -1,8 +1,11 @@
 .app.default {
-    --bg-color: #a69f9f;
-    --inverted-bg-color: #1f1f8f;
-    --main-color: #a057e3;
-    --inverted-main-color: #a057e3;
-    --secondary-color: #683486;
-    --inverted-secondary-color: #683486;
+    --bg-color: #e3e3f3;
+    --inverted-bg-color: #fff;
+    --main-color: #6362e7;
+    --hovered-main-color: #4f4eb9;
+    --disabled-main-color: #9191ec;
+    --inverted-main-color: #fff;
+    --hovered-inverted-main-color: #e8e8e8;
+    --secondary-color: #2c323f;
+    --inverted-secondary-color: #f4f6fd;
 }
