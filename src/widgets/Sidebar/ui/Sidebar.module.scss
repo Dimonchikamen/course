@@ -6,15 +6,16 @@
     transition: 0.4s;
     z-index: 1;
 
-    &.open {
-        width: var(--sidebar-width);
+    .logo__container {
+        padding: 1.25rem 0.25rem 0.25rem;
+        max-height: 120px;
     }
 
-    .logo__container {
+    &.open {
+        width: var(--sidebar-width);
 
-        .logo {
-            width: 100%;
+        .logo__container {
+            padding: 1.25rem 1.875rem 1.875rem;
         }
-
     }
 }
