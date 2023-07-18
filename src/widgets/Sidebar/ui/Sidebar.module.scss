@@ -11,6 +11,30 @@
         max-height: 120px;
     }
 
+    .sidebar_menu__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        > li {
+            padding: 0 0.75rem;
+        }
+        .sidebar_menu__item {
+            border-radius: 10px;
+            display: block;
+            cursor: pointer;
+            width: 100%;
+            color: var(--secondary-color);
+            padding: 0.75rem 0.94rem;
+
+            &:hover,
+            &.active {
+                color: var(--main-color);
+                background-color: var(--main-color-light);
+            }
+        }
+    }
+
     &.open {
         width: var(--sidebar-width);
 

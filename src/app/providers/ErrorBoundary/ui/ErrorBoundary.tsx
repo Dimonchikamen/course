@@ -1,4 +1,4 @@
-import React, {ErrorInfo, ReactNode} from "react";
+import React, { ErrorInfo, ReactNode } from "react";
 
 interface IErrorBoundaryProps {
     children: ReactNode;
@@ -6,16 +6,17 @@ interface IErrorBoundaryProps {
 
 interface IErrorBoundaryState {
     hasError: boolean;
+    error: string;
 }
 
 export class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBoundaryState> {
     constructor(props: IErrorBoundaryProps) {
         super(props);
-        this.state = { hasError: false };
+        this.state = { hasError: false, error: "" };
     }
 
     static getDerivedStateFromError(error: Error) {
-        return { hasError: true };
+        return { hasError: true, error: error.message };
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
@@ -23,10 +24,10 @@ export class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBo
     }
 
     render() {
-        const { hasError } = this.state;
+        const { hasError, error } = this.state;
         const { children } = this.props;
         if (hasError) {
-            return <h1>Что-то пошло не так</h1>;
+            return <h1>Что-то пошло не так: {error}</h1>;
         }
 
         return children;
