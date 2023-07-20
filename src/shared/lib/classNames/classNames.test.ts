@@ -21,7 +21,7 @@ describe("classNames", () => {
         expect(classNames("class", { "class-2": true }, "class-3")).toBe("class class-2 class-3");
     });
 
-    test('with tho string classes and mod with key="undefined"', () => {
+    test("with tho string classes and mod with key='undefined'", () => {
         expect(classNames("class", { undefined: true }, "class-2")).toBe("class class-2");
     });
 });
