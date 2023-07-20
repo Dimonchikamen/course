@@ -1,32 +1,32 @@
-import {RouteProps} from "react-router-dom";
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
-import {NotFoundPage} from "pages/NotFoundPage";
+import { RouteProps } from "react-router-dom";
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
+import { NotFoundPage } from "pages/NotFoundPage";
 
 export enum AppRoutes {
-    MAIN = "main",
-    ABOUT = "about",
+    PROFILE = "profile",
+    NEWS = "news",
     NOT_FOUND = "not_found",
 }
 
 export const RoutePath: Readonly<Record<AppRoutes, string>> = {
-    [AppRoutes.MAIN]: "/",
-    [AppRoutes.ABOUT]: "/about",
+    [AppRoutes.PROFILE]: "/profile",
+    [AppRoutes.NEWS]: "/news",
 
     [AppRoutes.NOT_FOUND]: "*",
 };
 
-export const routeConfig:  Readonly<Record<AppRoutes, RouteProps>> = {
-    [AppRoutes.MAIN]: {
-        path: RoutePath.main,
-        element: <MainPage />
+export const routeConfig: Readonly<Record<AppRoutes, RouteProps>> = {
+    [AppRoutes.PROFILE]: {
+        path: RoutePath.profile,
+        element: <MainPage />,
     },
-    [AppRoutes.ABOUT]: {
-        path: RoutePath.about,
-        element: <AboutPage/>
+    [AppRoutes.NEWS]: {
+        path: RoutePath.news,
+        element: <AboutPage />,
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,
-        element: <NotFoundPage />
-    }
+        element: <NotFoundPage />,
+    },
 };

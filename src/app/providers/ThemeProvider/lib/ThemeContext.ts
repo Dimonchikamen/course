@@ -1,4 +1,4 @@
-import React, {createContext} from "react";
+import React, { createContext } from "react";
 
 export enum Theme {
     light = "default",
@@ -7,8 +7,8 @@ export enum Theme {
 
 export type ThemeContextProps = {
     theme?: Theme;
-    setTheme?: React.Dispatch<React.SetStateAction<Theme>>
-}
+    setTheme?: React.Dispatch<React.SetStateAction<Theme>>;
+};
 
 export const ThemeContext = createContext<ThemeContextProps>({});
 

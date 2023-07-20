@@ -1,8 +1,8 @@
-import {FC, ReactNode, useCallback, useMemo, useState} from "react";
-import {SidebarContext} from "app/providers/SidebarProvider/lib/SidebarContext";
+import { FC, ReactNode, useCallback, useMemo, useState } from "react";
+import { SidebarContext } from "app/providers/SidebarProvider/lib/SidebarContext";
 
 interface ISidebarProviderProps {
-   children: ReactNode;
+    children: ReactNode;
 }
 
 export const SidebarProvider: FC<ISidebarProviderProps> = ({ children }) => {
@@ -10,11 +10,13 @@ export const SidebarProvider: FC<ISidebarProviderProps> = ({ children }) => {
 
     const toggleSidebar = useCallback(() => setOpen(prev => !prev), []);
 
-    const defaultProps = useMemo(() => ({
-        isOpen, toggleSidebar
-    }), [isOpen]);
-
-    return (
-        <SidebarContext.Provider value={defaultProps}>{children}</SidebarContext.Provider>
+    const defaultProps = useMemo(
+        () => ({
+            isOpen,
+            toggleSidebar,
+        }),
+        [isOpen]
     );
+
+    return <SidebarContext.Provider value={defaultProps}>{children}</SidebarContext.Provider>;
 };

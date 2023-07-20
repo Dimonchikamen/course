@@ -1,4 +1,4 @@
-import {ButtonHTMLAttributes, FC} from "react";
+import { ButtonHTMLAttributes, FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 
 import s from "./Button.module.scss";
@@ -15,7 +15,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
 }
 
-export const Button: FC<IButtonProps> = ({className, variant = ButtonVariant.default, children, ...rest }) => {
+export const Button: FC<IButtonProps> = ({ className, variant = ButtonVariant.default, children, ...rest }) => {
     return (
         <button
             className={classNames(s.button, s[variant], className)}

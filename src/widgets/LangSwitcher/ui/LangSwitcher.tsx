@@ -1,9 +1,9 @@
-import {FC} from "react";
-import {useTranslation} from "react-i18next";
-import {Button} from "shared/ui";
-import {ButtonVariant} from "shared/ui/Button/Button";
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
+import { Button } from "shared/ui";
+import { ButtonVariant } from "shared/ui/Button/Button";
 
-import {classNames} from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 
 interface ILangSwitcherProps {
     className?: string;

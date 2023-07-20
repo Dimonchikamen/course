@@ -1,5 +1,3 @@
-
-
 declare module "*.scss" {
     interface IClassNames {
         [clasName: string]: string;

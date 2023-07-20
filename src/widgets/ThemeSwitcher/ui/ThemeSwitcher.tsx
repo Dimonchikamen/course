@@ -1,9 +1,9 @@
 import { FC } from "react";
-import {useTheme} from "app/providers/ThemeProvider";
+import { useTheme } from "app/providers/ThemeProvider";
 import ThemeLightIcon from "shared/assets/icons/theme-light.svg";
 import ThemeDarkIcon from "shared/assets/icons/theme-dark.svg";
-import {Theme} from "app/providers/ThemeProvider";
-import {Button, ButtonVariant} from "shared/ui";
+import { Theme } from "app/providers/ThemeProvider";
+import { Button, ButtonVariant } from "shared/ui";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import s from "./ThemeSwitcher.module.scss";
@@ -20,7 +20,7 @@ export const ThemeSwitcher: FC<IThemeSwitcherProps> = ({ className }) => {
             variant={ButtonVariant.text}
             onClick={toggleTheme}
         >
-            { theme === Theme.light ? <ThemeLightIcon/> : <ThemeDarkIcon />}
+            {theme === Theme.light ? <ThemeLightIcon /> : <ThemeDarkIcon />}
         </Button>
     );
 };
