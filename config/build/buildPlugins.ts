@@ -1,7 +1,8 @@
 import webpack from "webpack";
-import htmlWebpackPlugin from "html-webpack-plugin";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import { BuildOptions } from "./types/config";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
@@ -10,10 +11,13 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
             chunkFilename: "css/[name].[hash:8].css",
         }),
         new webpack.ProgressPlugin(),
-        new htmlWebpackPlugin({ template: paths.html }),
+        new HtmlWebpackPlugin({ template: paths.html }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
     ];
 }
