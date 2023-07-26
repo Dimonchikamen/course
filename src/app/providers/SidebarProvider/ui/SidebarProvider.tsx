@@ -1,5 +1,5 @@
 import { FC, ReactNode, useCallback, useMemo, useState } from "react";
-import { SidebarContext } from "app/providers/SidebarProvider/lib/SidebarContext";
+import { SidebarContext } from "../lib/SidebarContext";
 
 interface ISidebarProviderProps {
     children: ReactNode;

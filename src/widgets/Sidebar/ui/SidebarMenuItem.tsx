@@ -1,11 +1,11 @@
 import { FC } from "react";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { SidebarMenuItemType } from "widgets/Sidebar";
 import { LinkMain } from "shared/ui";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import s from "./Sidebar.module.scss";
-import { useLocation } from "react-router-dom";
 
 interface ISidebarMenuItemProps {
     className?: string;

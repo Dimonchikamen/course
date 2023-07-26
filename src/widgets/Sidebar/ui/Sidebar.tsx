@@ -16,7 +16,10 @@ export const Sidebar: FC<ISidebarProps> = ({ className }) => {
     const { isOpen } = useSidebar();
 
     return (
-        <div className={classNames(s.sidebar, className, { [s.open]: isOpen })}>
+        <div
+            className={classNames(s.sidebar, className, { [s.open]: isOpen })}
+            data-testid="sidebar"
+        >
             <div className={s.logo__container}>
                 <LinkMain to={RoutePath.news}>
                     {isOpen ? (
