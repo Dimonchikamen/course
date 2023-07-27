@@ -11,6 +11,7 @@ export function classNames(...args: Argument[]): string {
             result.push(
                 ...Object.entries(arg)
                     .filter(([cls, value]) => Boolean(cls) && cls !== "undefined" && cls !== "null" && Boolean(value))
+                    // eslint-disable-next-line
                     .map(([cls, value]) => cls)
             );
         } else {

@@ -20,14 +20,15 @@ export class ErrorBoundary extends React.Component<IErrorBoundaryProps, IErrorBo
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        console.log(error, errorInfo);
+        alert(error.message);
+        alert("stack length = " + errorInfo.componentStack.length);
     }
 
     render() {
         const { hasError, error } = this.state;
         const { children } = this.props;
         if (hasError) {
-            return <h1>Что-то пошло не так: {error}</h1>;
+            return <h1>{error}</h1>;
         }
 
         return children;

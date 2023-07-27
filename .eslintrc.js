@@ -1,4 +1,9 @@
 module.exports = {
+    settings: {
+        react: {
+            version: "detect",
+        },
+    },
     env: {
         browser: true,
         es2021: true,
@@ -10,7 +15,6 @@ module.exports = {
         "plugin:i18next/recommended",
         "prettier",
     ],
-    overrides: [],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaFeatures: {
@@ -35,4 +39,18 @@ module.exports = {
         quotes: [1, "double"],
         semi: [1, "always"],
     },
+    overrides: [
+        {
+            files: ["**/src/**/*.test.{ts,tsx}"],
+            rules: {
+                "i18next/no-literal-string": "off",
+            },
+        },
+        {
+            files: ["**/src/shared/ui/**/**.tsx"],
+            rules: {
+                "react/jsx-props-no-spreading": "off",
+            },
+        },
+    ],
 };
