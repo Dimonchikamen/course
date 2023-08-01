@@ -6,12 +6,14 @@ import s from "./Button.module.scss";
 export enum ButtonVariant {
     text = "text",
     default = "default",
-    invert = "invert",
+    outline = "outline",
     secondary = "secondary",
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    // user className for customize button
     className?: string;
+    // button ui variant
     variant?: ButtonVariant;
 }
 

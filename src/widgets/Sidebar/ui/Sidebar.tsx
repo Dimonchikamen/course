@@ -3,10 +3,11 @@ import { useSidebar } from "app/providers/SidebarProvider";
 import Logo from "shared/assets/icons/logo.svg";
 import LogoMini from "shared/assets/icons/logo-mini.svg";
 import { sidebarMenu, SidebarMenuItem } from "widgets/Sidebar";
-import { classNames } from "shared/lib/classNames/classNames";
-import s from "./Sidebar.module.scss";
 import { LinkMain } from "shared/ui";
 import { RoutePath } from "shared/config/routerConfig/routerConfig";
+
+import { classNames } from "shared/lib/classNames/classNames";
+import s from "./Sidebar.module.scss";
 
 interface ISidebarProps {
     className?: string;

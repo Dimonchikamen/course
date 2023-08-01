@@ -8,9 +8,9 @@ describe("Button", () => {
         expect(screen.getByText("qwe")).toBeInTheDocument();
     });
 
-    test("Invert Button", () => {
-        render(<Button variant={ButtonVariant.invert}>qwe</Button>);
-        expect(screen.getByText("qwe")).toHaveClass(s.invert);
+    test("Outline Button", () => {
+        render(<Button variant={ButtonVariant.outline}>qwe</Button>);
+        expect(screen.getByText("qwe")).toHaveClass(s.outline);
         screen.debug();
     });
 });

@@ -4,6 +4,7 @@ module.exports = {
             version: "detect",
         },
     },
+
     env: {
         browser: true,
         es2021: true,
@@ -14,6 +15,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:i18next/recommended",
         "prettier",
+        "plugin:storybook/recommended",
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {

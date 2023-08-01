@@ -1,19 +1,25 @@
 import { FC } from "react";
 
-import { classNames } from "shared/lib/classNames/classNames";
 import s from "./Loader.module.scss";
 
 interface ILoaderProps {
-    className?: string;
+    backgroundColor?: string;
+    color?: string;
 }
 
-export const Loader: FC<ILoaderProps> = ({ className }) => {
+export const Loader: FC<ILoaderProps> = ({
+    backgroundColor = "var(--inverted-bg-color)",
+    color = "var(--main-color)",
+}) => {
     return (
-        <div className={classNames(s.lds_ring, className)}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div
+            className={s.loader}
+            style={{ backgroundColor }}
+        >
+            <span
+                className={s.loader_item}
+                style={{ backgroundColor: color, color }}
+            />
         </div>
     );
 };
