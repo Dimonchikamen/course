@@ -1,4 +1,12 @@
-@import "https://fonts.googleapis.com/css?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800";
+@font-face {
+    font-family: rubik;
+    src: url("./shared/assets/fonts/Rubik.ttf");
+}
+
+@font-face {
+    font-family: rubik, italic;
+    src: url("./shared/assets/fonts/Rubik-Italic.ttf");
+}
 
 :root {
     --font-family-main: rubik, sans-serif;
