@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"./src/**/*.{js,jsx,ts,tsx}\" --fix",
-    "styelint": "npx stylelint \"**/*.scss\"",
-    "styelint:fix": "npx stylelint \"**/*.scss\" --fix",
+    "stylelint": "npx stylelint \"**/*.scss\"",
+    "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
     "format": "prettier --write \"src/**/*.+(js|jsx|ts|tsx|json|css|scss|md)",
     "start": "webpack serve --env port=3000",
     "build": "webpack --env mode=production",
