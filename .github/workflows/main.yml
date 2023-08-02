@@ -1,13 +1,33 @@
-name: main
+name: linting, testing, building
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
-  check-bats-version:
+  pipeline:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x, 18.x]
+
     steps:
       - uses: actions/checkout@v3
+      - name: Starting node.js ${{ matrix.node-version }}
       - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - run: npm install -g bats
-      - run: bats -v
+      - with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+      - run: npm ci
+      - name: run build
+      - run: npm run build
+      - name: linting
+      - run: npm run lint
+      - run: npm run stylelint
+      - name: unit tests
+      - run: npm run test:unit
+      - name: ui tests
+      - run: npm run storybook
+      - run: npm run test:ui
+      - run: npm stop
