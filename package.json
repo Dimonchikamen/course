@@ -15,7 +15,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "concurrently --kill-others \"npm run storybook\" \"npm run test:ui\"",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -54,6 +54,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "babel-jest": "^29.6.1",
+    "concurrently": "^8.2.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
