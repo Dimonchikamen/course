@@ -2,6 +2,7 @@ import type { Preview } from "@storybook/react";
 import { Theme } from "../../src/app/providers/ThemeProvider";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator";
 import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator";
+import "./preview.scss";
 
 const preview: Preview = {
     parameters: {
