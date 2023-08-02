@@ -28,6 +28,7 @@ jobs:
       - name: unit tests
         run: npm run test:unit
       - name: ui tests
-        run: npm run storybook
-      - run: npm run test:ui
-      - run: npm stop
+        steps:
+          - run: npm run storybook
+          - run: npm run test:ui
+          - run: npm stop
