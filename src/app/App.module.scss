@@ -1,3 +1,5 @@
+@import "app/styles/mixines/breakpoints.scss";
+
 .app {
     border: 1px solid green;
 }
@@ -9,6 +11,14 @@
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+
+        @include breakpoints(tablet) {
+            margin-left: var(--sidebar-width-close);
+        }
+
+        @include breakpoints(mobile) {
+            margin-left: var(--sidebar-wudth-close-mobile);
+        }
 
         .page_content {
             flex-grow: 1;

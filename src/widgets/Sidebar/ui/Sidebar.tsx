@@ -1,12 +1,12 @@
-import { FC } from "react";
 import { useSidebar } from "app/providers/SidebarProvider";
-import Logo from "shared/assets/icons/logo.svg";
+import { FC } from "react";
 import LogoMini from "shared/assets/icons/logo-mini.svg";
-import { sidebarMenu, SidebarMenuItem } from "widgets/Sidebar";
-import { LinkMain } from "shared/ui";
+import Logo from "shared/assets/icons/logo.svg";
 import { RoutePath } from "shared/config/routerConfig/routerConfig";
 
 import { classNames } from "shared/lib/classNames/classNames";
+import { Button, ButtonVariant, LinkMain } from "shared/ui";
+import { sidebarMenu, SidebarMenuItem } from "widgets/Sidebar";
 import s from "./Sidebar.module.scss";
 
 interface ISidebarProps {
@@ -14,7 +14,7 @@ interface ISidebarProps {
 }
 
 export const Sidebar: FC<ISidebarProps> = ({ className }) => {
-    const { isOpen } = useSidebar();
+    const { isOpen, toggleSidebar } = useSidebar();
 
     return (
         <div
@@ -37,6 +37,15 @@ export const Sidebar: FC<ISidebarProps> = ({ className }) => {
                         />
                     )}
                 </LinkMain>
+                {isOpen && (
+                    <Button
+                        className={s.mobile_toggle__button}
+                        variant={ButtonVariant.text}
+                        onClick={toggleSidebar}
+                    >
+                        {"<"}
+                    </Button>
+                )}
             </div>
             <ul className={s.sidebar_menu__list}>
                 {sidebarMenu.map((item, i) => (
