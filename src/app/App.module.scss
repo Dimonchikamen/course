@@ -6,6 +6,7 @@
 
 .page_wrap {
     display: flex;
+    width: 100%;
 
     .wrap_content {
         display: flex;
@@ -17,7 +18,7 @@
         }
 
         @include breakpoints(mobile) {
-            margin-left: var(--sidebar-wudth-close-mobile);
+            margin-left: var(--sidebar-width-close-mobile);
         }
 
         .page_content {

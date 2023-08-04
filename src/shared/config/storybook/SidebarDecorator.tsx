@@ -4,6 +4,8 @@ import { Theme } from "app/providers/ThemeProvider";
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "widgets/Header";
 
+import s from "app/App.module.scss";
+
 // eslint-disable-next-line react/display-name
 export const SidebarDecorator = (theme: Theme) => (StoryComponent: () => ReturnType<StoryFn>) => {
     return (
@@ -17,9 +19,11 @@ export const SidebarDecorator = (theme: Theme) => (StoryComponent: () => ReturnT
                         height: "100%",
                     }}
                 >
-                    <StoryComponent />
-                    <div style={{ flexGrow: "1" }}>
-                        <Header />
+                    <div className={s.page_wrap}>
+                        <StoryComponent />
+                        <div className={s.wrap_content}>
+                            <Header />
+                        </div>
                     </div>
                 </div>
             </SidebarProvider>

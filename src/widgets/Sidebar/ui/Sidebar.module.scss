@@ -5,7 +5,9 @@
     background: var(--inverted-bg-color);
     width: var(--sidebar-width-close);
     height: 100vh;
-    transition: 0.4s;
+    transition:
+        all 0.4s,
+        height 0s;
     z-index: 1;
     overflow-x: hidden;
 
@@ -44,6 +46,7 @@
         padding: 0 0.5rem;
         height: calc(100% - 107px);
         overflow-y: auto;
+        overflow-x: hidden;
 
         .sidebar_menu__item {
             border-radius: 10px;
@@ -118,9 +121,10 @@
         position: absolute;
         left: 0;
         top: 0;
+        height: 100%;
     }
 
     @include breakpoints(mobile) {
-        width: var(--sidebar-wudth-close-mobile);
+        width: var(--sidebar-width-close-mobile);
     }
 }
