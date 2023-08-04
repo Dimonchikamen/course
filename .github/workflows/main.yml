@@ -7,7 +7,7 @@ on:
     branches: [main]
 jobs:
   pipeline:
-    runs-on: ubuntu-latest
+    runs-on: [windows-2019, windows-2021]
     strategy:
       matrix:
         node-version: [17.x, 18.x]
