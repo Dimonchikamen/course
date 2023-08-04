@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci
+        run: npm i
       - name: run build
         run: npm run build
       - name: linting
