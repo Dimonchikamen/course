@@ -13,9 +13,9 @@
     "build": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "test:ui": "npx loki test --chromeRetries 3 --dockerWithSudo true",
+    "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "concurrently -s first -k \"npm run storybook\" \"npm run test:ui\"",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -54,7 +54,6 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "babel-jest": "^29.6.1",
-    "concurrently": "^8.2.0",
     "css-loader": "^6.8.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
@@ -102,16 +101,11 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.app",
+        "target": "chrome.docker",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
-      },
-      "chrome.iphone7": {
-        "target": "chrome.app",
-        "preset": "iPhone 7",
-        "media": "screen"
       }
     }
   }
