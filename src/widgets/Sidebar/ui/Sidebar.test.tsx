@@ -1,31 +1,26 @@
-import { BrowserRouter } from "react-router-dom";
 import { screen, fireEvent } from "@testing-library/react";
 import { SidebarProvider } from "app/providers/SidebarProvider";
-import { renderWithTranslation } from "shared/lib/tests/renderWithTranslation/renderWithTranslation";
+import { componentRender } from "shared/lib/tests/componentRender/componentRender";
 import { Sidebar } from "./Sidebar";
 import { SidebarToggleButton } from "./SidebarToggleButton";
 import s from "./Sidebar.module.scss";
 
 describe("Sidebar", () => {
     test("Basic sidebar", () => {
-        renderWithTranslation(
-            <BrowserRouter>
-                <SidebarProvider>
-                    <Sidebar />
-                </SidebarProvider>
-            </BrowserRouter>
+        componentRender(
+            <SidebarProvider>
+                <Sidebar />
+            </SidebarProvider>
         );
         expect(screen.getByTestId("sidebar")).toBeInTheDocument();
     });
 
     test("test toggle", () => {
-        renderWithTranslation(
-            <BrowserRouter>
-                <SidebarProvider>
-                    <SidebarToggleButton />
-                    <Sidebar />
-                </SidebarProvider>
-            </BrowserRouter>
+        componentRender(
+            <SidebarProvider>
+                <SidebarToggleButton />
+                <Sidebar />
+            </SidebarProvider>
         );
         const toggleButton = screen.getByTestId("toggle-sidebar");
         expect(toggleButton).toBeInTheDocument();
