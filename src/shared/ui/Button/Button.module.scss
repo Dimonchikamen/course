@@ -11,6 +11,14 @@
     outline: none;
     transition: 0.2s;
 
+    &.l {
+        font: var(--font-l);
+    }
+
+    &.xl {
+        font: var(--font-xl);
+    }
+
     &.default {
         background-color: var(--main-color);
         color: var(--inverted-main-color);
@@ -68,6 +76,23 @@
         &:disabled {
             background-color: var(--disabled-main-color);
             color: inherit;
+        }
+    }
+
+    &.square {
+        border-radius: 5px;
+        padding: 0;
+        width: var(--font-line-m);
+        height: var(--font-line-m);
+
+        &.l {
+            width: var(--font-line-l);
+            height: var(--font-line-l);
+        }
+
+        &.xl {
+            width: var(--font-line-xl);
+            height: var(--font-line-xl);
         }
     }
 }

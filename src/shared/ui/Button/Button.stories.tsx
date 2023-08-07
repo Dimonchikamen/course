@@ -54,3 +54,18 @@ export const SecondaryDark: Story = {
     },
 };
 SecondaryDark.decorators = [ThemeDecorator(Theme.dark)];
+
+export const Square: Story = {
+    args: {
+        square: true,
+        children: "+",
+    },
+};
+
+export const SquareDark: Story = {
+    args: {
+        square: true,
+        children: "+",
+    },
+};
+SquareDark.decorators = [ThemeDecorator(Theme.dark)];

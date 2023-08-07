@@ -15,12 +15,21 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     // button ui variant
     variant?: ButtonVariant;
+    square?: boolean;
+    buttonSize?: "m" | "l" | "xl";
 }
 
-export const Button: FC<IButtonProps> = ({ className, variant = ButtonVariant.default, children, ...rest }) => {
+export const Button: FC<IButtonProps> = ({
+    className,
+    variant = ButtonVariant.default,
+    square = false,
+    buttonSize = "m",
+    children,
+    ...rest
+}) => {
     return (
         <button
-            className={classNames(s.button, s[variant], className)}
+            className={classNames(s.button, s[variant], { [s.square]: square }, s[buttonSize], className)}
             {...rest}
         >
             {children}
