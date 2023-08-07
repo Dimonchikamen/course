@@ -23,7 +23,7 @@ export const Header: FC<INavbarProps> = ({ className, style }) => {
                     <ThemeSwitcher />
                 </li>
                 <li>
-                    <LangSwitcher />
+                    <LangSwitcher short={true} />
                 </li>
             </ul>
         </div>

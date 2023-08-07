@@ -7,10 +7,12 @@ import { classNames } from "shared/lib/classNames/classNames";
 
 interface ILangSwitcherProps {
     className?: string;
+    short?: boolean;
 }
 
-export const LangSwitcher: FC<ILangSwitcherProps> = ({ className }) => {
+export const LangSwitcher: FC<ILangSwitcherProps> = ({ className, short }) => {
     const { t, i18n } = useTranslation();
+    const key = short ? "Короткий язык" : "Язык";
 
     const toggle = () => {
         i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
@@ -22,7 +24,7 @@ export const LangSwitcher: FC<ILangSwitcherProps> = ({ className }) => {
             variant={ButtonVariant.text}
             onClick={toggle}
         >
-            {t("Язык")}
+            {t(key)}
         </Button>
     );
 };
