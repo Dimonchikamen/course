@@ -16,6 +16,7 @@
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:report": "reg-cli .loki/current .loki/reference .loki/difference -R .loki/report.html -J .loki/reg.json",
     "storybook": "storybook dev -p 6006 -c ./config/storybook -s ../../public",
     "storybook:build": "storybook build -c ./config/storybook -s ./public"
   },
@@ -69,6 +70,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "prettier": "^3.0.0",
     "react-test-renderer": "^18.2.0",
+    "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
