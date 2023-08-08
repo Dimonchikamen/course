@@ -43,7 +43,7 @@ export const Header: FC<INavbarProps> = ({ className, style }) => {
                         isOpen={modalIsOpen}
                         toggle={toggleModalHandler}
                     >
-                        модалка для входа
+                        +++++++++++++++++++++++++
                     </Modal>
                 </li>
             </ul>
