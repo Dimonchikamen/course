@@ -1,8 +1,4 @@
-@import "app/styles/mixines/breakpoints";
-
-.app {
-    border: 1px solid green;
-}
+@import "./src/app/styles/mixines/breakpoints";
 
 .page_wrap {
     display: flex;
