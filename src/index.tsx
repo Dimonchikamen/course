@@ -1,3 +1,4 @@
+import { StoreProvider } from "app/providers/StoreProvider";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { ErrorBoundary } from "app/providers/ErrorBoundary";
@@ -14,11 +15,13 @@ const root = createRoot(container);
 root.render(
     <BrowserRouter>
         <ErrorBoundary>
-            <ThemeProvider>
-                <SidebarProvider>
-                    <App />
-                </SidebarProvider>
-            </ThemeProvider>
+            <StoreProvider>
+                <ThemeProvider>
+                    <SidebarProvider>
+                        <App />
+                    </SidebarProvider>
+                </ThemeProvider>
+            </StoreProvider>
         </ErrorBoundary>
     </BrowserRouter>
 );

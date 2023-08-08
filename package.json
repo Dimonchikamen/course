@@ -60,6 +60,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-i18next": "^6.0.3",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.13",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
@@ -87,12 +88,14 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "i18next": "^23.2.10",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.2",
+    "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.1"
   },
   "overrides": {
