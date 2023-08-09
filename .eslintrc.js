@@ -47,6 +47,13 @@ module.exports = {
     },
     overrides: [
         {
+            files: ["**/server/**/*.js"],
+            rules: {
+                "@typescript-eslint/no-var-requires": "off",
+                "no-undef": "off",
+            },
+        },
+        {
             files: ["**/src/**/*.test.{ts,tsx}", "**/src/**/*.stories.{ts,tsx}"],
             rules: {
                 "i18next/no-literal-string": "off",
