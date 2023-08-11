@@ -1,8 +1,21 @@
 .app_theme_dark {
+    // bg colors
     --bg-color: #1d1e26;
     --inverted-bg-color: #1f2533;
+
+    // font colors
+    --accent-main-color: #6362e7;
+    --accent-main-color-light: #1d1e26;
+    --accent-secondary-color: #b3b2f3;
+    --regular-main-color: rgb(255 255 255 / 60%);
+    --regular-secondary-color: rgb(255 255 255 / 50%);
+
+    // other colors
+    --gray-main-color: #505050;
+    --gray-secondary-color: #404040;
     --main-color: #6362e7;
     --main-color-light: #1d1e26;
+    --color-error: #d55;
     --hovered-main-color: #4f4eb9;
     --disabled-main-color: #9191ec;
     --inverted-main-color: #fff;

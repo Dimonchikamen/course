@@ -39,6 +39,7 @@ module.exports = {
         "react/jsx-indent-props": [2, 4],
         "react/jsx-props-no-spreading": "warn",
         indent: [2, 4],
+        "react/display-name": "off",
         "linebreak-style": "off",
         quotes: [1, "double"],
         semi: [1, "always"],

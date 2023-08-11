@@ -1,12 +1,24 @@
 :root {
+    // bg colors
     --bg-color: #e3e3f3;
     --inverted-bg-color: #fff;
+
+    // font colors
+    --accent-main-color: #6362e7;
+    --accent-main-color-light: rgb(244 246 253);
+    --accent-secondary-color: #b3b2f3;
+    --regular-main-color: #242934;
+    --regular-secondary-color: #2c323f;
+
+    // other colors
+    --gray-main-color: #707070;
+    --gray-secondary-color: #dcdcdc;
     --main-color: #6362e7;
     --main-color-light: rgb(244 246 253);
+    --color-error: #d55;
     --hovered-main-color: #4f4eb9;
     --disabled-main-color: #9191ec;
     --inverted-main-color: #fff;
-    --hovered-inverted-main-color: #e8e8e8;
     --secondary-color: #2c323f;
     --inverted-secondary-color: #f4f6fd;
 }

@@ -1,5 +1,5 @@
-export { Button } from "./Button/Button";
-export { ButtonVariant } from "./Button/Button";
+export { Button, ButtonVariant } from "./Button/Button";
+export { Input } from "./Input/Input";
 export { LinkMain } from "./LinkMain/LinkMain";
 export { Loader } from "./Loader/Loader";
 export { Modal } from "./Modal/Modal";
