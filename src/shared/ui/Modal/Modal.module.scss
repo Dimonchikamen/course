@@ -5,9 +5,6 @@
     inset: 0;
     opacity: 0;
     pointer-events: none;
-    transition:
-        opacity 0.3s,
-        z-index 0.3s;
     z-index: -1;
 
     &.open {
@@ -15,23 +12,69 @@
         pointer-events: auto;
         z-index: var(--modal-z-index);
     }
+
+    &.opening {
+        animation: opening_modal_bg;
+
+        @keyframes opening_modal_bg {
+            0% {
+                opacity: 0;
+                z-index: -1;
+            }
+
+            100% {
+                opacity: 1;
+                z-index: var(--modal-z-index);
+            }
+        }
+    }
+
+    .close_icon {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.75rem;
+
+        > path {
+            fill: var(--regular-secondary-color);
+        }
+
+        &:hover {
+            > path {
+                fill: var(--accent-main-color);
+            }
+        }
+
+        &.external {
+            > path {
+                fill: var(--inverted-secondary-color);
+            }
+
+            &:hover {
+                > path {
+                    fill: var(--accent-secondary-color);
+                }
+            }
+        }
+    }
 }
 
 .modal_background {
     width: 100%;
     height: 100%;
     background-color: var(--overlay-color);
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .content {
-    background: var(--bg-color);
+    background: var(--inverted-bg-color);
     border-radius: 0.5rem;
-    padding: 1.25rem;
-    transition: transform 0.3s;
+    padding: 2.5rem 1.25rem 1.25rem;
     transform: scale(0.5);
+    position: relative;
     min-width: 10%;
     max-width: 25%;
 
@@ -49,11 +92,37 @@
         transform: scale(1);
     }
 
+    &.opening {
+        animation: opening_modal;
+
+        @keyframes opening_modal {
+            0% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
     @include breakpoints(tablet) {
-        max-width: 50%;
+        &.l {
+            min-width: 35%;
+            max-width: 55%;
+        }
+
+        &.xl {
+            min-width: 55%;
+            max-width: 80%;
+        }
     }
 
     @include breakpoints(mobile) {
-        max-width: 80%;
+        &.l,
+        &.xl {
+            min-width: 80%;
+            max-width: 80%;
+        }
     }
 }
