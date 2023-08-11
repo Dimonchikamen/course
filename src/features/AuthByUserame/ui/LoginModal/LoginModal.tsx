@@ -3,7 +3,6 @@ import { Modal } from "shared/ui";
 import { LoginForm } from "../LoginForm/LoginForm";
 
 import { classNames } from "shared/lib/classNames/classNames";
-import s from "./LoginModal.module.scss";
 
 interface ILoginModalProps {
     className?: string;
