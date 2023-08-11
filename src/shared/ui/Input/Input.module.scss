@@ -1,5 +1,5 @@
 .label {
-    display: inline-block;
+    display: inline;
     margin-bottom: 0.2rem;
 }
 
@@ -8,6 +8,7 @@
     border: 1px solid var(--gray-secondary-color);
     border-radius: 5px;
     color: inherit;
+    display: block;
     padding: 10px 15px;
     transition: border 0.2s;
     width: 100%;
