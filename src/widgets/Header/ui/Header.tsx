@@ -1,8 +1,9 @@
+import { LoginModal } from "features/AuthByUserame";
 import { CSSProperties, FC, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonVariant, Modal } from "shared/ui";
+import { Button, ButtonVariant } from "shared/ui";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { SidebarToggleButton } from "widgets/Sidebar";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
@@ -39,12 +40,10 @@ export const Header: FC<INavbarProps> = ({ className, style }) => {
                     >
                         {t("Войти")}
                     </Button>
-                    <Modal
+                    <LoginModal
                         isOpen={modalIsOpen}
-                        toggle={toggleModalHandler}
-                    >
-                        +++++++++++++++++++++++++
-                    </Modal>
+                        onClose={toggleModalHandler}
+                    />
                 </li>
             </ul>
         </div>
