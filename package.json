@@ -19,7 +19,8 @@
     "test:ui:ci": "npm run storybook:build && loki --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "reg-cli .loki/current .loki/reference .loki/difference -R .loki/report.html -J .loki/reg.json",
     "storybook": "storybook dev -p 6006 -c ./config/storybook -s ../../public",
-    "storybook:build": "storybook build -c ./config/storybook -s ./public"
+    "storybook:build": "storybook build -c ./config/storybook -s ./public",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Dmitry Chechikhin",
@@ -87,7 +88,8 @@
     "webpack": "^5.87.0",
     "webpack-bundle-analyzer": "^4.9.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-dev-server": "^4.15.1",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
