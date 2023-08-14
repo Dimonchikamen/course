@@ -4,6 +4,7 @@
     box-shadow: 0 0 20px 0 rgb(89 102 122 / 10%);
     background: var(--inverted-bg-color);
     width: var(--sidebar-width-close);
+    min-width: var(--sidebar-width-close);
     height: 100vh;
     transition:
         all 0.4s,
@@ -94,6 +95,7 @@
 
     &.open {
         width: var(--sidebar-width);
+        min-width: var(--sidebar-width);
 
         .logo__container {
             padding: 1.25rem 1.875rem 1.5rem;
