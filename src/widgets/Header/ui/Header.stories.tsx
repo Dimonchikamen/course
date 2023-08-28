@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { DynamicThemeDecorator } from "shared/config/storybook/DynamicThemeDecorator";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator";
 import { Header } from "./Header";
 
 const meta = {
@@ -14,4 +15,4 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const BaseHeader: Story = {};
-BaseHeader.decorators = [DynamicThemeDecorator];
+BaseHeader.decorators = [StoreDecorator({}), DynamicThemeDecorator];
