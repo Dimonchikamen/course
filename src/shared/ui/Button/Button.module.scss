@@ -8,6 +8,10 @@
     outline: none;
     transition: 0.2s;
 
+    &:disabled {
+        cursor: default;
+    }
+
     &.l {
         font: var(--font-l);
     }
