@@ -12,6 +12,8 @@
   "Страница не найдена": "Page not found",
 
   "Войти": "Log In",
+  "Выйти": "Log out",
   "Имя пользователя": "Username",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "error": "error"
 }

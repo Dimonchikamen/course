@@ -1,0 +1,2 @@
+export const USER_INFO_LOCALSTORAGE_KEY = "@USER_INFO";
+export const ACCESS_TOKEN = "@ACCESS_TOKEN";

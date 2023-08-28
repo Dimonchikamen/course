@@ -14,6 +14,10 @@ declare module "*.svg" {
 
 declare const __IS_DEV__: boolean;
 
+// hack for use this types in "shared/model/*"
+declare type RootState = import("../providers/StoreProvider").RootState;
+declare type AppDispatch = import("../providers/StoreProvider").AppDispatch;
+
 declare module "*.png";
 declare module "*.jpg";
 declare module "*.jpeg";

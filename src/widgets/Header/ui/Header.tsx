@@ -1,6 +1,8 @@
+import { userActions, userSelectors } from "entities/User";
 import { LoginModal } from "features/AuthByUserame";
 import { CSSProperties, FC, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonVariant } from "shared/ui";
@@ -15,10 +17,16 @@ interface INavbarProps {
 }
 
 export const Header: FC<INavbarProps> = ({ className, style }) => {
+    const userAuthData = useSelector(userSelectors.getAuthData);
+    const dispatch = useDispatch();
     const { t } = useTranslation();
     const [modalIsOpen, setModalOpen] = useState(false);
 
     const toggleModalHandler = useCallback(() => setModalOpen(prev => !prev), []);
+
+    const logoutHandler = useCallback(() => {
+        dispatch(userActions.logout());
+    }, []);
 
     return (
         <div
@@ -36,9 +44,9 @@ export const Header: FC<INavbarProps> = ({ className, style }) => {
                 <li>
                     <Button
                         variant={ButtonVariant.text}
-                        onClick={toggleModalHandler}
+                        onClick={userAuthData ? logoutHandler : toggleModalHandler}
                     >
-                        {t("Войти")}
+                        {userAuthData ? t("Выйти") : t("Войти")}
                     </Button>
                     <LoginModal
                         isOpen={modalIsOpen}
