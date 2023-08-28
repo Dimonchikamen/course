@@ -1,8 +1,8 @@
 import { FC, KeyboardEvent, MouseEvent, ReactElement, ReactNode, useCallback, useEffect, useState } from "react";
-import { Portal } from "shared/ui";
 import CrossIcon from "shared/assets/icons/cross-icon.svg";
 
 import { classNames } from "shared/lib/classNames/classNames";
+import { Portal } from "shared/ui";
 import s from "./Modal.module.scss";
 
 interface IModalProps {
@@ -99,7 +99,7 @@ export const Modal: FC<IModalProps> = ({
                 <div
                     className={s.modal_background}
                     data-testid={"modal-background"}
-                    onClick={onClose}
+                    onMouseDown={onClose}
                 >
                     {external && closeButton}
                     <div
@@ -112,7 +112,7 @@ export const Modal: FC<IModalProps> = ({
                             animationDuration: `${animationDurationMs}ms`,
                         }}
                         data-testid={"modal-content"}
-                        onClick={clickContentHandler}
+                        onMouseDown={clickContentHandler}
                     >
                         {!external && closeButton}
                         {children}
