@@ -32,7 +32,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
                     return thunkAPI.rejectWithValue("Ошибка сервера, попробуйте позже");
                 }
             }
-            return "Неизвестная ошибка";
+            return thunkAPI.rejectWithValue("Неизвестная ошибка");
         }
     }
 );

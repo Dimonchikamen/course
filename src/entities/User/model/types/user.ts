@@ -1,6 +1,6 @@
 export type User = {
     id: string;
-    login: string;
+    username: string;
 };
 
 export type UserSchema = {
