@@ -48,6 +48,12 @@ module.exports = {
     },
     overrides: [
         {
+            files: ["**/src/**/*.{jsx,tsx}"],
+            rules: {
+                indent: "off",
+            },
+        },
+        {
             files: ["**/server/**/*.js"],
             rules: {
                 "@typescript-eslint/no-var-requires": "off",
