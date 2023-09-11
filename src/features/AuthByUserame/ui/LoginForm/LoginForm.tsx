@@ -28,6 +28,7 @@ const LoginForm = memo(({ className }: ILoginFormProps) => {
     const username = useSelector(authByUsernameSelectors.getLoginUsername);
     const password = useSelector(authByUsernameSelectors.getLoginPassword);
     const dispatch = useAppDispatch();
+    console.log(error);
 
     const changeUsernameHandler = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => dispatch(loginActions.setUsername(e.target.value)),

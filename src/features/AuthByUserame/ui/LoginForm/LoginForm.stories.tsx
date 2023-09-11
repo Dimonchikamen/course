@@ -32,3 +32,9 @@ export const LoginFormLight: Story = {
 export const LoginFormDark: Story = {
     decorators: [ThemeDecorator(Theme.dark)],
 };
+
+export const LoginFormWithError: Story = {
+    decorators: [
+        StoreDecorator({ loginForm: { username: "user", password: "pass", error: "from custom text error" } }),
+    ],
+};
