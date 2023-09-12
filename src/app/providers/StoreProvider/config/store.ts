@@ -20,6 +20,7 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
         preloadedState: initialState,
     });
 
+    //eslint-disable-next-line
     //@ts-ignore;
     store.reducerManager = reducerManager;
 
@@ -42,4 +43,5 @@ function getStoreTypes() {
 }
 
 export type RootState = ReturnType<Pick<ReturnType<typeof getStoreTypes>, "getState">["getState"]>;
-export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
+//export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
+export type AppDispatch = Pick<ReturnType<typeof getStoreTypes>, "dispatch">["dispatch"];
