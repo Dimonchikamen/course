@@ -41,6 +41,5 @@ function getStoreTypes() {
     };
 }
 
-// hack for get redux store types
 export type RootState = ReturnType<Pick<ReturnType<typeof getStoreTypes>, "getState">["getState"]>;
-export type AppDispatch = Pick<ReturnType<typeof getStoreTypes>, "dispatch">["dispatch"];
+export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];

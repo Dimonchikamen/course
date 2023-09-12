@@ -5,7 +5,8 @@ import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicModuleLoader } from "shared/lib/components";
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/model/hooks";
+import { useAppDispatch } from "shared/lib/hooks/storeHooks";
+import { SuccessCallback } from "shared/model/types";
 import { Button, Input } from "shared/ui";
 import { authByUsernameSelectors } from "../../model/selectors";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
@@ -14,13 +15,14 @@ import s from "./LoginForm.module.scss";
 
 export interface ILoginFormProps {
     className?: string;
+    onSuccessLogin?: SuccessCallback;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: ILoginFormProps) => {
+const LoginForm = memo(({ className, onSuccessLogin }: ILoginFormProps) => {
     const { t } = useTranslation();
 
     const isLoading = useSelector(authByUsernameSelectors.getLoginIsLoading);
@@ -28,7 +30,6 @@ const LoginForm = memo(({ className }: ILoginFormProps) => {
     const username = useSelector(authByUsernameSelectors.getLoginUsername);
     const password = useSelector(authByUsernameSelectors.getLoginPassword);
     const dispatch = useAppDispatch();
-    console.log(error);
 
     const changeUsernameHandler = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => dispatch(loginActions.setUsername(e.target.value)),
@@ -42,7 +43,7 @@ const LoginForm = memo(({ className }: ILoginFormProps) => {
 
     const submitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch(loginByUsername({ username, password }));
+        dispatch(loginByUsername({ username, password, successCallback: onSuccessLogin }));
     };
 
     return (

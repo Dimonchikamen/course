@@ -2,10 +2,12 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { User, userActions } from "entities/User";
 import { USER_INFO_LOCALSTORAGE_KEY } from "shared/const/localStorage";
+import { SuccessCallback } from "shared/model/types";
 
 type LoginByUsernameProps = {
     username: string;
     password: string;
+    successCallback?: SuccessCallback;
 };
 
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string }>(
@@ -20,6 +22,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
 
             localStorage.setItem(USER_INFO_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             thunkAPI.dispatch(userActions.setAuthData(response.data));
+            data.successCallback?.();
 
             return response.data;
         } catch (e: unknown) {
