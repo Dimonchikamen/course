@@ -1,6 +1,6 @@
 import { userActions, userSelectors } from "entities/User";
 import { LoginModal } from "features/AuthByUserame";
-import { CSSProperties, FC, useCallback, useState } from "react";
+import { CSSProperties, memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -11,12 +11,12 @@ import { SidebarToggleButton } from "widgets/Sidebar";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import s from "./Header.module.scss";
 
-interface INavbarProps {
+interface IHeaderProps {
     className?: string;
     style?: CSSProperties;
 }
 
-export const Header: FC<INavbarProps> = ({ className, style }) => {
+export const Header = memo(({ className, style }: IHeaderProps) => {
     const userAuthData = useSelector(userSelectors.getAuthData);
     const dispatch = useDispatch();
     const { t } = useTranslation();
@@ -24,9 +24,7 @@ export const Header: FC<INavbarProps> = ({ className, style }) => {
 
     const toggleModalHandler = useCallback(() => setModalOpen(prev => !prev), []);
 
-    const logoutHandler = useCallback(() => {
-        dispatch(userActions.logout());
-    }, []);
+    const logoutHandler = useCallback(() => dispatch(userActions.logout()), []);
 
     return (
         <div
@@ -56,4 +54,4 @@ export const Header: FC<INavbarProps> = ({ className, style }) => {
             </ul>
         </div>
     );
-};
+});

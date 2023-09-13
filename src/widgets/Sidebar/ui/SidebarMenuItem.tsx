@@ -1,26 +1,27 @@
-import { FC } from "react";
-import { useLocation } from "react-router-dom";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { SidebarMenuItemType } from "widgets/Sidebar";
-import { LinkMain } from "shared/ui";
 
 import { classNames } from "shared/lib/classNames/classNames";
+import { LinkMain } from "shared/ui";
+import { SidebarMenuItemType } from "widgets/Sidebar";
 import s from "./Sidebar.module.scss";
 
 interface ISidebarMenuItemProps {
     className?: string;
     item: SidebarMenuItemType;
+    active?: boolean;
+    collapsed?: boolean;
 }
 
-export const SidebarMenuItem: FC<ISidebarMenuItemProps> = ({ className, item }) => {
+export const SidebarMenuItem = memo(({ className, item, active = false, collapsed = false }: ISidebarMenuItemProps) => {
     const { t } = useTranslation();
-    const { pathname } = useLocation();
+
+    console.log("RENDER_ITEM");
 
     if (item.type === "link") {
-        const isActive = pathname.includes(item.path);
         return (
             <LinkMain
-                className={classNames(s.sidebar_menu__item, { [s.active]: isActive }, className)}
+                className={classNames(s.sidebar_menu__item, { [s.active]: active }, className)}
                 to={item.path}
             >
                 {item.icon}
@@ -30,4 +31,4 @@ export const SidebarMenuItem: FC<ISidebarMenuItemProps> = ({ className, item }) 
     } else {
         return <div className={classNames(s.sidebar_menu__item, className)}></div>;
     }
-};
+});

@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, memo, useId } from "react";
+import { FC, InputHTMLAttributes, useId } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import s from "./Input.module.scss";
@@ -14,7 +14,7 @@ interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     invalid?: boolean;
 }
 
-export const Input = memo((props: IInputProps) => {
+export const Input: FC<IInputProps> = props => {
     const { containerClassName, labelClassName, className, hintClassName, label, hint, invalid, ...rest } = props;
     const id = useId();
     return (
@@ -44,4 +44,4 @@ export const Input = memo((props: IInputProps) => {
             )}
         </div>
     );
-});
+};
