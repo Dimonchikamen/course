@@ -3,8 +3,14 @@ import { createReducerManager } from "app/providers/StoreProvider/config/reducer
 import { StateSchema } from "app/providers/StoreProvider/config/StateSchema";
 import { counterReducer } from "entities/Counter";
 import { userReducer } from "entities/User";
+import { baseApi } from "shared/api/api";
+import { NavigateOptions, To } from "react-router";
 
-export function createReduxStore(initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) {
+export function createReduxStore(
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
+    navigate?: (to: To, options?: NavigateOptions) => void
+) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
@@ -13,11 +19,20 @@ export function createReduxStore(initialState?: StateSchema, asyncReducers?: Red
 
     const reducerManager = createReducerManager(rootReducer);
 
-    const store = configureStore<StateSchema>({
+    const store = configureStore({
         reducer: reducerManager.reduce,
 
         devTools: __IS_DEV__,
         preloadedState: initialState,
+        middleware: getDefaultMiddleware =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: {
+                        api: baseApi,
+                        navigate,
+                    },
+                },
+            }),
     });
 
     //eslint-disable-next-line

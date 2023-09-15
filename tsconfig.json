@@ -33,6 +33,7 @@
   },
 
   "include": [
+    "./node_modules/*",
     "./**/config/**/*.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",

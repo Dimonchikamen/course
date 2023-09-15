@@ -13,6 +13,7 @@ declare module "*.svg" {
 }
 
 declare const __IS_DEV__: boolean;
+declare const __API_URL__: string;
 
 // hack for use this types in "shared/model/*"
 declare type RootState = import("../providers/StoreProvider").RootState;
