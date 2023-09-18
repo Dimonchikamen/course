@@ -1,4 +1,3 @@
-const fs = require("fs");
 const jsonServer = require("json-server");
 const path = require("path");
 
@@ -16,21 +15,11 @@ server.use(async (req, res, next) => {
     next();
 });
 
-server.post("/login", (req, res) => {
-    try {
-        const { username, password } = req.body;
-        const users = JSON.parse(fs.readFileSync(path.resolve(__dirname, "users.json"), { encoding: "utf-8" }));
+const userController = require("./controllers/userController");
 
-        const userFromDb = users.find(u => u.username === username && u.password === password);
-
-        if (userFromDb) {
-            return res.json(userFromDb);
-        }
-
-        return res.status(400).json({ message: "invalid login or password" });
-    } catch (e) {
-        return res.status(500).json({ message: e.message });
-    }
+Object.keys(userController).forEach(key => {
+    const controller = userController[key];
+    server[controller.method](controller.path, controller.handler);
 });
 
 server.use((req, res, next) => {

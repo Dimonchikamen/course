@@ -1,6 +1,12 @@
 [
   {
     "id": "1",
-    "userId": "1"
+    "username": "admin",
+    "name": "Иван",
+    "surname": "Иванов",
+    "age": 22,
+    "currency": "RUB",
+    "currencyCount": 10,
+    "avatar": null
   }
 ]
