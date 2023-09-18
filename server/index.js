@@ -15,12 +15,10 @@ server.use(async (req, res, next) => {
     next();
 });
 
-const userController = require("./controllers/userController");
+const connectController = require("./helpers/connectController");
 
-Object.keys(userController).forEach(key => {
-    const controller = userController[key];
-    server[controller.method](controller.path, controller.handler);
-});
+connectController(server, require("./controllers/userController"));
+connectController(server, require("./controllers/profileController"));
 
 server.use((req, res, next) => {
     if (!req.headers.authorization) {

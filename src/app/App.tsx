@@ -10,9 +10,10 @@ import s from "./App.module.scss";
 
 const App: FC = () => {
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(userActions.checkAuth());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className={classNames("app")}>

@@ -1,9 +1,9 @@
-import { profileReducer } from "entities/Profile";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { fetchProfileData, ProfileCard, profileReducer } from "entities/Profile";
 import { classNames } from "shared/lib/classNames/classNames";
-import { DynamicModuleLoader } from "shared/lib/components";
-import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { DynamicModuleLoader, ReducersList } from "shared/lib/components";
+import { useAppDispatch } from "shared/lib/hooks/storeHooks";
 
 const reducers: ReducersList = { profile: profileReducer };
 
@@ -13,12 +13,18 @@ interface IProfilePageProps {
 
 const ProfilePage: FC<IProfilePageProps> = ({ className }) => {
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProfileData({ username: "dasd" }));
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader
             reducers={reducers}
             removeAfterUnmount={false}
         >
-            <div className={classNames(className)}>{t("Личный кабинет")}</div>
+            <ProfileCard />
         </DynamicModuleLoader>
     );
 };
