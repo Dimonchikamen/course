@@ -1,4 +1,4 @@
-import { combineReducers, configureStore, ReducersMapObject } from "@reduxjs/toolkit";
+import { CombinedState, combineReducers, configureStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { createReducerManager } from "app/providers/StoreProvider/config/reducerManager";
 import { StateSchema } from "app/providers/StoreProvider/config/StateSchema";
 import { counterReducer } from "entities/Counter";
@@ -20,7 +20,7 @@ export function createReduxStore(
     const reducerManager = createReducerManager(rootReducer);
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
 
         devTools: __IS_DEV__,
         preloadedState: initialState,
@@ -58,5 +58,4 @@ function getStoreTypes() {
 }
 
 export type RootState = ReturnType<Pick<ReturnType<typeof getStoreTypes>, "getState">["getState"]>;
-//export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
-export type AppDispatch = Pick<ReturnType<typeof getStoreTypes>, "dispatch">["dispatch"];
+export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];

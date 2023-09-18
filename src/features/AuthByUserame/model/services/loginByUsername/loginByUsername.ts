@@ -30,12 +30,14 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
             return response.data;
         } catch (e: unknown) {
-            if (e instanceof AxiosError) {
-                if (e.response.status >= 400 && e.response.status < 500) {
-                    return rejectWithValue(e.response.data.message);
-                } else if (e.response.status >= 500) {
+            if (e instanceof AxiosError && e.response) {
+                const status = e.response.status;
+                const message = e.response.data.message;
+                if (status >= 400 && status < 500) {
+                    return rejectWithValue(message);
+                } else if (status >= 500) {
                     //eslint-disable-next-line
-                    console.error(e.response.data.message);
+                    console.error(message);
                     return rejectWithValue("Ошибка сервера, попробуйте позже");
                 }
             }

@@ -1,7 +1,6 @@
 import { FC, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { fetchProfileData, ProfileCard, profileReducer } from "entities/Profile";
-import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components";
 import { useAppDispatch } from "shared/lib/hooks/storeHooks";
 

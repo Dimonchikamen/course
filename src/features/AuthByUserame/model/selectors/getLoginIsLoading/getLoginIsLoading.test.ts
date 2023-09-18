@@ -1,6 +1,6 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { StateSchema } from "app/providers/StoreProvider";
 import { getLoginIsLoading } from "./getLoginIsLoading";
+import { DeepPartial } from "shared/model/types";
 
 describe("getLoginIsLoading selector", () => {
     test("should return form state", () => {

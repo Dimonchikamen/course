@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SidebarContext } from "app/providers/SidebarProvider/lib/SidebarContext";
+import { SidebarContext } from "./SidebarContext";
 
 type UseSidebarResult = {
     toggleSidebar: () => void;
@@ -7,7 +7,7 @@ type UseSidebarResult = {
 };
 
 export const useSidebar = (): UseSidebarResult => {
-    const { isOpen, toggleSidebar } = useContext(SidebarContext);
+    const { isOpen = true, toggleSidebar = () => {} } = useContext(SidebarContext);
 
     return { isOpen, toggleSidebar };
 };

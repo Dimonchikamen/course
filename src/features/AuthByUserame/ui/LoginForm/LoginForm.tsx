@@ -1,8 +1,6 @@
 import React, { FormEvent, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-
-import { classNames } from "shared/lib/classNames/classNames";
 import { DynamicModuleLoader } from "shared/lib/components";
 import { ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/storeHooks";
@@ -11,6 +9,8 @@ import { Button, Input } from "shared/ui";
 import { authByUsernameSelectors } from "../../model/selectors";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
+
+import { classNames } from "shared/lib/classNames/classNames";
 import s from "./LoginForm.module.scss";
 
 export interface ILoginFormProps {

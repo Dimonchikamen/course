@@ -1,5 +1,5 @@
 type Mods = Record<string, boolean | string | null | undefined>;
-type Argument = string | Mods | undefined;
+type Argument = string | Mods | undefined | null;
 
 export function classNames(...args: Argument[]): string {
     const result: string[] = [];

@@ -1,6 +1,6 @@
-import { DeepPartial } from "@reduxjs/toolkit";
 import { StateSchema } from "app/providers/StoreProvider";
 import { getLoginUsername } from "./getLoginUsername";
+import { DeepPartial } from "shared/model/types";
 
 describe("getLoginForm selector", () => {
     test("should return form state", () => {
