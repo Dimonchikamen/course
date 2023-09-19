@@ -23,7 +23,7 @@ export type ReduxStoreWithManager = EnhancedStore<StateSchema> & {
 
 export type ReducerManager = {
     getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
+    reduce: Reducer<CombinedState<StateSchema>>;
     add: (key: StateSchemaKey, reducer: Reducer) => void;
     remove: (key: StateSchemaKey) => void;
 };
