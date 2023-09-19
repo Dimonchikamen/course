@@ -11,6 +11,5 @@ describe("Button", () => {
     test("Outline Button", () => {
         render(<Button variant={ButtonVariant.outline}>qwe</Button>);
         expect(screen.getByText("qwe")).toHaveClass(s.outline);
-        screen.debug();
     });
 });

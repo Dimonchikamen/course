@@ -16,8 +16,6 @@ interface ISidebarMenuItemProps {
 export const SidebarMenuItem = memo(({ className, item, active = false, collapsed = false }: ISidebarMenuItemProps) => {
     const { t } = useTranslation();
 
-    console.log("RENDER_ITEM");
-
     if (item.type === "link") {
         return (
             <LinkMain
