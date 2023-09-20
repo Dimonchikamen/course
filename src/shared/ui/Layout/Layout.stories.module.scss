@@ -1,0 +1,28 @@
+.container {
+    border: 1px solid cadetblue;
+    background-color: lightblue;
+    width: 500px;
+}
+
+.el_row {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    text-align: center;
+}
+
+.el {
+    border: 1px solid gray;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.row {
+    .el {
+        background-color: inherit;
+    }
+}
+
+.colored {
+    background-color: #f5d5a8;
+}
+

@@ -1,0 +1,40 @@
+@use "sass:math";
+@import "app/styles/mixines/breakpoints";
+
+@mixin generate-cols($size) {
+    @for $s from 1 to $size + 1 {
+        &_#{$s} {
+            width: calc(100% * $s / $size);
+
+            @include breakpoints(mobile) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.col {
+    padding: 0 0.5rem;
+
+    @include generate-cols(10);
+
+    &_auto {
+        width: auto;
+        flex-grow: 1;
+    }
+
+    &:has(> .row) {
+        padding: 0;
+    }
+}
+
+.row {
+    padding: 0 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &:has(> .col) {
+        padding: 0;
+    }
+}

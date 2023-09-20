@@ -1,0 +1,19 @@
+@import "app/styles/mixines/breakpoints";
+
+.container {
+    &:not(.fluid) {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+
+        @include breakpoints(tablet, mobile) {
+            width: calc(100% - 2rem);
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &.fluid {
+        padding: 0 1rem;
+    }
+}
