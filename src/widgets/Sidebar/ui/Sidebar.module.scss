@@ -127,6 +127,7 @@
     }
 
     @include breakpoints(mobile) {
+        min-width: var(--sidebar-width-close-mobile);
         width: var(--sidebar-width-close-mobile);
     }
 }
