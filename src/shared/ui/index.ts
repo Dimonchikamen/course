@@ -1,4 +1,6 @@
 export { Button, ButtonVariant } from "./Button/Button";
+export { Card } from "./Card/Card";
+export { Container } from "./Container/Container";
 export { Input } from "./Input/Input";
 export { Col, Row } from "./Layout";
 export { LinkMain } from "./LinkMain/LinkMain";
